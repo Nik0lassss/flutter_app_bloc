@@ -10,7 +10,6 @@ import 'bloc_module.dart';
 @Injector(const [BlocModule])
 abstract class BlocInjector {
 
-
   @provide
   SiteBloc get siteBloc;
 
