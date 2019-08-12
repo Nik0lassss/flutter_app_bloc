@@ -16,19 +16,18 @@ class SiteDetail extends StatefulWidget {
 class SiteDetailState extends State<SiteDetail> {
   SiteItem siteItem;
 
-  SiteDetailState() {
-    siteItem = ModalRoute.of(context).settings.arguments;
-  }
+  SiteDetailState() {}
 
   @override
   void initState() {
     super.initState();
     widget._siteDetailBloc.init();
-    widget._siteDetailBloc.fetchQuestionsBySite(siteItem.name);
   }
 
   @override
   Widget build(BuildContext context) {
+    siteItem = ModalRoute.of(context).settings.arguments;
+    widget._siteDetailBloc.fetchQuestionsBySite(siteItem.name);
     return Scaffold(
       appBar: AppBar(
         title: Text("Stack sites"),
